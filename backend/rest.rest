@@ -1,0 +1,6 @@
+//get full product 
+GET http://localhost:8000/api/v1/product
+###
+
+// pagination
+GET http://localhost:8000/api/v1/product?page=1
