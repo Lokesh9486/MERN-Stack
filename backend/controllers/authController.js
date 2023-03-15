@@ -6,6 +6,7 @@ exports.registerUser=catchAsyncError(async (req,res,next)=>{
     const user=await User.create({
         name,email,password,avatar
     });
+    console.log(user);
     res.status(201).json({
         success:true,
         user

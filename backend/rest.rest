@@ -4,3 +4,16 @@ GET http://localhost:8000/api/v1/product
 
 // pagination
 GET http://localhost:8000/api/v1/product?page=1
+###
+
+//register
+POST http://localhost:8000/api/v1/register
+
+Content-Type: application/json
+
+{
+    "name":"loky",
+    "email":"abc@gmail.com",
+    "password":1234567,
+    "avator":"1234567.jpg"
+}

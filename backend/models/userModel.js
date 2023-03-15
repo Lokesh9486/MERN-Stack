@@ -4,22 +4,21 @@ const validator=require("validator");
 const userSchema=new mongoose.Schema({
     name:{
         type:String,
-        require:[true,"Please enter name"]
+        required:[true,"Please enter name"]
     },
     email:{
         type:String,
-        require:[true,"please enter email"],
+        required:[true,"please enter email"],
         unique:true,
         validate:[validator.isEmail,"please enter valid email"],
     },
     password:{
         type:String,
-        require:[true,"please enter password"],
+        required:[true,"please enter password"],
         maxlength:[6,"password cannot exceed 6 Characters"]
     },
     avator:{
         type:String,
-        require:true
     },
     role:{
         type:String,
