@@ -13,6 +13,10 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.0",
+<<<<<<< HEAD
+=======
+    "cookie-parser": "^1.4.6",
+>>>>>>> 354204be9bdbf286ad767ed3d71c42970d41ce21
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.0",

@@ -1,20 +1,29 @@
+@host_name=http://localhost:8000/api/v1
 //get full product 
-GET http://localhost:8000/api/v1/product
+GET {{host_name}}/product
 ###
 
 // pagination
-GET http://localhost:8000/api/v1/product?page=1
+GET {{host_name}}/product?page=1
 ###
 
-
-@hostname =http://localhost:8000/api/v1
 //register
-POST {{hostname}}/register 
+POST {{host_name}}/register
 content-type: application/json
 
 {
     "name":"loky",
     "email":"abc@gmail.com",
-    "password":123456,
+    "password":123458,
     "avator":"1234567.jpg"
+}
+###
+
+//login
+POST {{host_name}}/login
+content-type: application/json
+
+{
+    "email":"abc@gmail.com",
+    "password":"123458"
 }
