@@ -13,14 +13,16 @@ module.exports = (err, req, res, next) => {
   }
   else{
     let message=err.message;
-    let error=new Error(err);
+    let error=new Error(message);
     if(err.name=="ValidationError"){
       message=Object.values(err.errors).map(value=>value.message)
-      error=new ErrorHandler(message,400);
+      error=new Error(message);
+      err.statusCode=400
     }
     if(err.name="CastError"){
-       message=`Resource not found : ${err.path}`; 
-       error=new ErrorHandler(message,400);
+      message=`Resource not found : ${err.path}`; 
+      error=new Error(message);
+      err.statusCode=400
     }
     res.status(err.statusCode).json({
       success:false,
