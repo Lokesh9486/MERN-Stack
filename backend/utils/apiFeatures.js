@@ -4,7 +4,7 @@ class APIFeatures{
         this.query=query;
         this.queryStr=queryStr;
     }
-    search(){
+    search(){ 
         let keyword=this.queryStr.keyword?{
             name:{
                 $regex:this.queryStr.keyword,
@@ -27,7 +27,6 @@ class APIFeatures{
         return this;
     }
     paginate(resultPerPage){
-        // 
         const currentPage=Number(this.queryStr.page)||1;
         const skip=resultPerPage*currentPage-1;
         this.query.limit(resultPerPage).skip(skip);

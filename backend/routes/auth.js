@@ -1,6 +1,6 @@
 const express=require("express");
-const { registerUser, loginUser } = require("../controllers/authController");
-const { logoutUser } = require("../middlewars/authenticate");
+const { registerUser, loginUser, forgotPassword } = require("../controllers/authController");
+const { logoutUser, resetPassword, isAuthenticatedUser } = require("../middlewars/authenticate");
 const router=express.Router();
 
 
@@ -9,5 +9,11 @@ router.route("/register").post(registerUser);
 router.route("/login").post(loginUser);
 
 router.route("/logout").get(logoutUser);
+
+router.route("/password/forgot").post(forgotPassword);
+
+router.route("/password/reset/:token").post(resetPassword);
+
+router.route("/changepassword").put(isAuthenticatedUser,changePassword);
 
 module.exports=router;

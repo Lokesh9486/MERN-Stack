@@ -25,5 +25,9 @@ content-type: application/json
 
 {
     "email":"abc@gmail.com",
-    "password":"123458"
+    "password":"123456"
 }
+###
+
+//logout
+GET {{host_name}}/logout
